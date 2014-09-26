@@ -11,8 +11,16 @@ public class SoldState implements State {
 	public void insertQuarter() {
 		System.out.println("Please wait, we're already giving you a gumball");
 	}
+	
+	public void insertDime() {
+		System.out.println("Please wait, we're already giving you a gumball");
+	}
+	
+	public void insertNickel() {
+		System.out.println("Please wait, we're already giving you a gumball");
+	}
  
-	public void ejectQuarter() {
+	public void ejectQuarter(Coin c) {
 		System.out.println("Sorry, you already turned the crank");
 	}
  

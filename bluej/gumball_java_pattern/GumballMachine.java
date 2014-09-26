@@ -1,59 +1,99 @@
 
 
-public class GumballMachine {
+public class GumballMachine implements IGumballMachine
+{
  
-	State soldOutState;
-	State noQuarterState;
-	State hasQuarterState;
-	State soldState;
+    State soldOutState;
+    State noQuarterState;
+    State hasQuarterState;
+    State soldState;
  
-	State state = soldOutState;
-	int count = 0;
- 
-	public GumballMachine(int numberGumballs) {
-		soldOutState = new SoldOutState(this);
-		noQuarterState = new NoQuarterState(this);
-		hasQuarterState = new HasQuarterState(this);
-		soldState = new SoldState(this);
+    State state = soldOutState;
+    int count = 0;
+    boolean gumballstate;
+    int gumballout;
+    public GumballMachine(int numberGumballs) {
+        soldOutState = new SoldOutState(this);
+        noQuarterState = new NoQuarterState(this);
+        hasQuarterState = new HasQuarterState(this);
+        soldState = new SoldState(this);
+     
 
-		this.count = numberGumballs;
- 		if (numberGumballs > 0) {
-			state = noQuarterState;
-		} 
-	}
- 
-	public void insertQuarter() {
-		state.insertQuarter();
-	}
- 
-	public void ejectQuarter() {
-		state.ejectQuarter();
-	}
- 
-	public void turnCrank() {
-		state.turnCrank();
-		state.dispense();
-	}
+        this.count = numberGumballs;
+        if (numberGumballs > 0) {
+            state = noQuarterState;
+        } 
+    }
+    
+    public boolean isGumballInSlot( ) 
+    {
+        return gumballstate;
+    }
+    public void takeGumballFromSlot( ) 
+    {
+        gumballstate = false;
+        gumballout -=1;
+        isGumballInSlot();
+    }
+//     public void insertCoin(Coin c){
+//         if( c.getClass() == Quarter.class)
+//             insertQuarter(c);
+//         if(c.getClass() == Nickel.class)
+//             insertNickel(c);
+//         if(c.getClass() == Dime.class)
+//             insertDime(c);
+//     }
+public void insertQuarter()
+{
+    state.insertQuarter();
+}
 
-	void setState(State state) {
-		this.state = state;
-	}
+public void insertDime()
+{
+    state.insertDime();
+}
+
+public void insertNickel()
+{
+    state.insertNickel();
+}
+//     public void insertQuarter(Coin c) {
+//             state.insertQuarter(c);
+//     }
  
-	void releaseBall() {
-		System.out.println("A gumball comes rolling out the slot...");
-		if (count != 0) {
-			count = count - 1;
-		}
-	}
+    
+    
+//     public void ejectQuarter(Coin c) {
+//         state.ejectQuarter(c);
+//     }
  
-	int getCount() {
-		return count;
-	}
+    public void turnCrank() {
+        state.turnCrank();
+        state.dispense();
+        gumballstate = true;
+        gumballout +=1;
+    }
+
+    void setState(State state) {
+        this.state = state;
+    }
  
-	void refill(int count) {
-		this.count = count;
-		state = noQuarterState;
-	}
+    void releaseBall() {
+        System.out.println("A gumball comes rolling out the slot...Number of gumballs : " + gumballout);
+        
+        if (count != 0) {
+            count = count - 1;
+        }
+    }
+ 
+    int getCount() {
+        return count;
+    }
+ 
+    void refill(int count) {
+        this.count = count;
+        state = noQuarterState;
+    }
 
     public State getState() {
         return state;
@@ -75,16 +115,16 @@ public class GumballMachine {
         return soldState;
     }
  
-	public String toString() {
-		StringBuffer result = new StringBuffer();
-		result.append("\nMighty Gumball, Inc.");
-		result.append("\nJava-enabled Standing Gumball Model #2004");
-		result.append("\nInventory: " + count + " gumball");
-		if (count != 1) {
-			result.append("s");
-		}
-		result.append("\n");
-		result.append("Machine is " + state + "\n");
-		return result.toString();
-	}
+    public String toString() {
+        StringBuffer result = new StringBuffer();
+        result.append("\nMighty Gumball, Inc.");
+        result.append("\nJava-enabled Standing Gumball Model #2004");
+        result.append("\nInventory: " + count + " gumball");
+        if (count != 1) {
+            result.append("s");
+        }
+        result.append("\n");
+        result.append("Machine is " + state + "\n");
+        return result.toString();
+    }
 }

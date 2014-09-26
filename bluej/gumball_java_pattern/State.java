@@ -3,7 +3,9 @@
 public interface State {
  
 	public void insertQuarter();
-	public void ejectQuarter();
+	void insertDime( ) ;
+    void insertNickel( ) ;
+	//public void ejectQuarter();
 	public void turnCrank();
 	public void dispense();
 }

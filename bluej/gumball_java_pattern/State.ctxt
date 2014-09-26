@@ -2,9 +2,11 @@
 comment0.params=
 comment0.target=void\ insertQuarter()
 comment1.params=
-comment1.target=void\ ejectQuarter()
+comment1.target=void\ insertDime()
 comment2.params=
-comment2.target=void\ turnCrank()
+comment2.target=void\ insertNickel()
 comment3.params=
-comment3.target=void\ dispense()
-numComments=4
+comment3.target=void\ turnCrank()
+comment4.params=
+comment4.target=void\ dispense()
+numComments=5
