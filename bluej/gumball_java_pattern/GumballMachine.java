@@ -8,7 +8,7 @@ public class GumballMachine implements IGumballMachine
     State hasQuarterState;
     State soldState;
  
-    State state = soldOutState;
+    State state;
     int count = 0;
     boolean gumballstate;
     int gumballout;
@@ -17,7 +17,7 @@ public class GumballMachine implements IGumballMachine
         noQuarterState = new NoQuarterState(this);
         hasQuarterState = new HasQuarterState(this);
         soldState = new SoldState(this);
-     
+        state  = soldOutState;
 
         this.count = numberGumballs;
         if (numberGumballs > 0) {
@@ -63,9 +63,16 @@ public void insertNickel()
  
     
     
-//     public void ejectQuarter(Coin c) {
-//         state.ejectQuarter(c);
-//     }
+    public void ejectQuarter() {
+        state.ejectQuarter();
+    }
+    public void ejectNickel() {
+        state.ejectNickel();
+    }
+    
+    public void ejectDime() {
+        state.ejectDime();
+    }
  
     public void turnCrank() {
         state.turnCrank();

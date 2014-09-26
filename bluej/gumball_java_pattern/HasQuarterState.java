@@ -49,12 +49,47 @@ public class HasQuarterState implements State {
 //            
 //     }
  
-//     public void ejectQuarter(Coin c) {
-//         System.out.println("Quarter returned");
-//         total -= c.cost ;
-//         if(total == 0)
-//             gumballMachine.setState(gumballMachine.getNoQuarterState());
-//     }
+    public void ejectQuarter() {
+        //System.out.println("Quarter returned");
+        total -= 25 ;
+        if(total < 0)
+            System.out.println("You cannot eject quarter before inserting one");
+            
+        else if(total == 0)
+        {
+            gumballMachine.setState(gumballMachine.getNoQuarterState());
+            System.out.println("Quarter returned");
+        }
+        else if(total > 0)
+            System.out.println("Quarter returned");
+    }
+     public void ejectDime() {
+        //System.out.println("Dime returned");
+        total -= 10 ;
+         if(total < 0)
+            System.out.println("You cannot eject dime before inserting one");
+         else if(total == 0)
+         {
+            gumballMachine.setState(gumballMachine.getNoQuarterState());
+            System.out.println("Dime returned");
+         }
+         else if(total > 0)
+            System.out.println("Dime returned");
+        
+    }
+     public void ejectNickel() {
+        //System.out.println("Nickel returned");
+        total -= 5 ;
+        if(total < 0)
+            System.out.println("You cannot eject nickel before inserting one");
+        else if(total == 0)
+        {
+            gumballMachine.setState(gumballMachine.getNoQuarterState());
+            System.out.println("Nickel returned");
+        }
+        else if(total > 0)
+            System.out.println("Nickel returned");
+    }
 //  
     public void turnCrank() {
         int extra = 0;

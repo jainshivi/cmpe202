@@ -20,8 +20,14 @@ public class SoldOutState implements State {
         
         System.out.println("You can't insert a dime, the machine is sold out");
     }
-    public void ejectQuarter(Coin c) {
+    public void ejectQuarter() {
         System.out.println("You can't eject, you haven't inserted a quarter yet");
+    }
+    public void ejectDime() {
+        System.out.println("You can't eject, you haven't inserted a dime yet");
+    }
+    public void ejectNickel() {
+        System.out.println("You can't eject, you haven't inserted a nickel yet");
     }
  
     public void turnCrank() {
