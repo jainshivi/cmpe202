@@ -1,5 +1,3 @@
-
-
 import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
@@ -61,18 +59,6 @@ public class HasQuarterStateTest
         assertEquals(65, hasQuart1.getTotalValue());
     }
 
-   
-
-   
-
-    
-
-   
-
-    
-
-   
-
     @Test
     public void eject()
     {
@@ -101,8 +87,6 @@ public class HasQuarterStateTest
         hasQuart1.insertDime();
         hasQuart1.insertQuarter();
         hasQuart1.turnCrank();
-        hasQuart1.turnCrank();
-        assertEquals(m1.getSoldState(), m1.getState());
         assertEquals(m1.getSoldState(), m1.getState());
         m1.setState(hasQuart1);
         hasQuart1.insertQuarter();

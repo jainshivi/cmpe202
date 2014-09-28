@@ -39,13 +39,6 @@ public class SoldStateTest
     public void tearDown()
     {
     }
-
-   
-
-    @Test
-    public void dispense()
-    {
-    }
 }
 
 

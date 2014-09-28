@@ -13,6 +13,10 @@ import org.junit.Test;
  */
 public class NoQuarterStateTest
 {
+    private GumballMachine g1;
+    private NoQuarterState noQuarte1;
+    
+
     /**
      * Default constructor for test class NoQuarterStateTest
      */
@@ -28,6 +32,9 @@ public class NoQuarterStateTest
     @Before
     public void setUp()
     {
+        g1 = new GumballMachine(5);
+        noQuarte1 = new NoQuarterState(g1);
+        g1.setState(noQuarte1);
     }
 
     /**
@@ -40,13 +47,9 @@ public class NoQuarterStateTest
     {
     }
 
-   
-
     @Test
     public void insert()
     {
-        GumballMachine g1 = new GumballMachine(20);
-        NoQuarterState noQuarte1 = new NoQuarterState(g1);
         assertEquals(noQuarte1, g1.getState());
         noQuarte1.insertQuarter();
         assertEquals(g1.getHasQuarterState(), g1.getState());
@@ -59,8 +62,6 @@ public class NoQuarterStateTest
     @Test
     public void eject()
     {
-        GumballMachine g1 = new GumballMachine(5);
-        NoQuarterState noQuarte1 = new NoQuarterState(g1);
         assertEquals(noQuarte1, g1.getState());
         noQuarte1.ejectDime();
         assertEquals(noQuarte1, g1.getState());
@@ -69,8 +70,6 @@ public class NoQuarterStateTest
     @Test
     public void turnCrank()
     {
-        GumballMachine g1 = new GumballMachine(10);
-        NoQuarterState noQuarte1 = new NoQuarterState(g1);
         noQuarte1.turnCrank();
         assertEquals(noQuarte1, g1.getState());
     }

@@ -44,7 +44,7 @@ public class GumballMachineTest
     }
 
     @Test
-    public void sample()
+    public void endToEnd()
     {
         m1.insertQuarter();
         m1.insertNickel();
