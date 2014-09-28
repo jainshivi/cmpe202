@@ -79,6 +79,7 @@ public void insertNickel()
         state.dispense();
         gumballstate = true;
         gumballout +=1;
+        System.out.println("A gumball comes rolling out the slot...Number of gumballs : " + gumballout);
     }
 
     void setState(State state) {
@@ -86,7 +87,7 @@ public void insertNickel()
     }
  
     void releaseBall() {
-        System.out.println("A gumball comes rolling out the slot...Number of gumballs : " + gumballout);
+        
         
         if (count != 0) {
             count = count - 1;

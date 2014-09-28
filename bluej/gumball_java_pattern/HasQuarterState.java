@@ -49,46 +49,57 @@ public class HasQuarterState implements State {
 //            
 //     }
  
+    public int getTotalValue() { return total; }
+    
     public void ejectQuarter() {
         //System.out.println("Quarter returned");
-        total -= 25 ;
-        if(total < 0)
+        
+        if(total < 25)
             System.out.println("You cannot eject quarter before inserting one");
             
         else if(total == 0)
         {
             gumballMachine.setState(gumballMachine.getNoQuarterState());
+            //System.out.println("Quarter returned");
+        }
+        else if(total >= 25)
+        {
+            total -= 25 ;
             System.out.println("Quarter returned");
         }
-        else if(total > 0)
-            System.out.println("Quarter returned");
     }
      public void ejectDime() {
         //System.out.println("Dime returned");
-        total -= 10 ;
-         if(total < 0)
+        
+         if(total < 10)
             System.out.println("You cannot eject dime before inserting one");
          else if(total == 0)
          {
             gumballMachine.setState(gumballMachine.getNoQuarterState());
+            //System.out.println("Dime returned");
+         }
+         else if(total >= 10)
+         {
+            total -= 10 ;
             System.out.println("Dime returned");
          }
-         else if(total > 0)
-            System.out.println("Dime returned");
         
     }
      public void ejectNickel() {
         //System.out.println("Nickel returned");
-        total -= 5 ;
-        if(total < 0)
+        
+        if(total < 5)
             System.out.println("You cannot eject nickel before inserting one");
         else if(total == 0)
         {
             gumballMachine.setState(gumballMachine.getNoQuarterState());
+            //System.out.println("Nickel returned");
+        }
+        else if(total > 5)
+        {
+            total -= 5 ;
             System.out.println("Nickel returned");
         }
-        else if(total > 0)
-            System.out.println("Nickel returned");
     }
 //  
     public void turnCrank() {
