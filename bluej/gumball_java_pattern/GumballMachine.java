@@ -62,6 +62,11 @@ public void insertNickel()
 //     }
  
     
+public int getAmountInGumballMachine()
+{
+    
+    return ((HasQuarterState)hasQuarterState).getTotalValue();
+}
     
     public void ejectQuarter() {
         state.ejectQuarter();
