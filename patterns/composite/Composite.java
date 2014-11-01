@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Composite implements Component {
 
     private ArrayList<Component> components = new ArrayList<Component>()  ;
-    private String description ;
+    protected String description ;
     
     public Composite ( String d )
     {

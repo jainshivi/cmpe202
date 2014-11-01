@@ -1,14 +1,10 @@
 #BlueJ class context
-comment0.params=n
-comment0.target=void\ setDescription(java.lang.String)
-comment1.params=
-comment1.target=java.lang.String\ getDescription()
-comment2.params=
-comment2.target=void\ getPrice()
-comment3.params=c
-comment3.target=void\ addChild(Component)
-comment4.params=c
-comment4.target=void\ removeChild(Component)
-comment5.params=i
-comment5.target=void\ getChild(int)
-numComments=6
+comment0.params=
+comment0.target=void\ printDescription()
+comment1.params=c
+comment1.target=void\ addChild(Component)
+comment2.params=c
+comment2.target=void\ removeChild(Component)
+comment3.params=i
+comment3.target=Component\ getChild(int)
+numComments=4

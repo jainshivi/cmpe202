@@ -6,7 +6,7 @@ import java.text.DecimalFormat;
 public class Leaf implements Component {
 
     private String description ;
-    private Double price ;
+    protected Double price ;
 
     public Leaf ( String d, Double p )
     {
@@ -17,6 +17,7 @@ public class Leaf implements Component {
     public void printDescription() {
         DecimalFormat fmt = new DecimalFormat("0.00");
         System.out.println( description + " " + fmt.format(price) ) ;
+        
     }
 
     public void addChild(Component c) {
