@@ -23,7 +23,8 @@ public class BuildOrder {
            CrispyOnionStrings crispy = new CrispyOnionStrings("Crispy Onion Strings",5.50);           
            ThePurist purist = new ThePurist("The Purist",8.00);
            CustomBurger customBurger = new CustomBurger("Build your own burger");
-           String[] optionsBun = {"Beef","1/3lb.","On A Bun"};
+           //String[] optionsBun = {"Beef","1/3lb.","On A Bun"};
+           String[] optionsBun = {"Beef","1/3lb.","In A Bowl"};
            String[] optionsCheese = {"Danish Blue Cheese","Horseradish Cheddar"};
            String[] optionsToppings = {"Bermuda Red Onion","Black Olives","Carrot Strings","Coleslaw"};
            String[] optionsPremTopp = {"Applewood Smoked Bacon"};
